@@ -2,14 +2,13 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var cssmin = require('gulp-cssmin');
 var uglify = require('gulp-uglify');
-//var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin = require('gulp-imagemin');
 var webserver = require('gulp-webserver');
 var gutil = require('gulp-util');
 var less = require('gulp-less');
-
+var ngmin = require('gulp-ngmin');
 
 gulp.task('buildLib', function() {
   var libraries = require('./dependencies.json').dependencies;
@@ -46,19 +45,21 @@ gulp.task('imageMin', function() {
 gulp.task('watch', ['cssConcat'], function () {
   gulp.watch('./app/css/**/*.css', ['cssConcat']);
   gulp.watch('./app/js/**/*.js', ['jsUglify']);
-  gulp.watch('./app/templates/**/**/*.js', ['templatesDirect']);
+  gulp.watch('./app/templates/**/*.html', ['templatesDirect']);
+  gulp.watch('./app/index.html', ['templates']);
 });
 
 gulp.task('cssConcat', function() {
-  return gulp.src(['./css/**/*.css', './bower_components/angular-bootstrap/ui-bootstrap-csp.css'])
+  return gulp.src(['./css/**/*.css', './bower_components/bootstrap/dist/css/bootstrap.css'])
   .pipe(autoprefixer())
   .pipe(concat('all.css'))
   .pipe(gulp.dest('./build/css'));
 });
 
 gulp.task('jsUglify', function() {
-  return gulp.src('./js/**/*.js')
+  return gulp.src('./app/js/**/*.js')
   .pipe(concat('all.js'))
+  .pipe(ngmin())
   .pipe(uglify())
   .pipe(gulp.dest('./build/js'));
 });
@@ -68,9 +69,9 @@ gulp.task('templates', function() {
   .pipe(gulp.dest('./build'));
 });
 
-gulp.task('templates.direct', function() {
-  return gulp.src(['./app/templates/**/**/.*html'])
+gulp.task('templatesDirect', function() {
+  return gulp.src(['./app/templates/**/**/*.html'])
   .pipe(gulp.dest('./build/templates'));
 });
 
-gulp.task('default', ['cssConcat', 'jsUglify', 'watch', 'webserver', 'templates', 'buildLib', 'less']);
+gulp.task('default', ['cssConcat', 'jsUglify', 'watch', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less']);
