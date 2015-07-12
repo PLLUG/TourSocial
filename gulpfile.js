@@ -12,7 +12,6 @@ var ngmin = require('gulp-ngmin');
 
 gulp.task('buildLib', function() {
   var libraries = require('./dependencies.json').dependencies;
-
   gulp.src(libraries)
   .pipe(concat('vendor.js'))
   .pipe(uglify())
@@ -20,10 +19,9 @@ gulp.task('buildLib', function() {
 });
 
 gulp.task('webserver', function() {
-  gulp.src('./')
+  gulp.src('./build/')
   .pipe(webserver({
     livereload: true,
-    directoryListing: true,
     open: true
   }));
 });
@@ -70,8 +68,8 @@ gulp.task('templates', function() {
 });
 
 gulp.task('templatesDirect', function() {
-  return gulp.src(['./app/templates/**/**/*.html'])
+  return gulp.src(['./app/templates/**/*.html'])
   .pipe(gulp.dest('./build/templates'));
 });
 
-gulp.task('default', ['cssConcat', 'jsUglify', 'watch', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less']);
+gulp.task('default', ['cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
