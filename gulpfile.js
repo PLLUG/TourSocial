@@ -11,8 +11,7 @@ var less = require('gulp-less');
 var ngmin = require('gulp-ngmin');
 
 gulp.task('buildLib', function() {
-  var libraries = require('./dependencies.json').dependencies;
-  gulp.src(libraries)
+  gulp.src(require('./dependencies.json').dependencies)
   .pipe(concat('vendor.js'))
   .pipe(uglify())
   .pipe(gulp.dest('./build/js'));
@@ -41,14 +40,14 @@ gulp.task('imageMin', function() {
 });
 
 gulp.task('watch', ['cssConcat'], function () {
-  gulp.watch('./app/css/**/*.css', ['cssConcat']);
+  gulp.watch('./app/less/**/*.less', ['less', 'cssConcat']);
   gulp.watch('./app/js/**/*.js', ['jsUglify']);
   gulp.watch('./app/templates/**/*.html', ['templatesDirect']);
   gulp.watch('./app/index.html', ['templates']);
 });
 
 gulp.task('cssConcat', function() {
-  return gulp.src(['./css/**/*.css', './bower_components/bootstrap/dist/css/bootstrap.css'])
+  return gulp.src(require('./stylesheets-dependencies.json').dependencies)
   .pipe(autoprefixer())
   .pipe(concat('all.css'))
   .pipe(gulp.dest('./build/css'));

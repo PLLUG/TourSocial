@@ -31,7 +31,8 @@ angular.module("app", ['ui.router'])
     url: '/about',
     views: {
       'content@base': {
-        templateUrl: 'templates/about.html'
+        templateUrl: 'templates/about.html',
+        controller: 'AboutController'
       }
     }
   });
