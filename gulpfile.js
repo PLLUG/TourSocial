@@ -86,7 +86,11 @@ gulp.task('templatesDirect', function() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 gulp.task('default', ['cssConcat', 'jsUglify', 'webserver', 'imageMin', 'image', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
+=======
+gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
+>>>>>>> f28bc6ef50258d09dc07cb921504f34e761507fa
 =======
 gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
 >>>>>>> f28bc6ef50258d09dc07cb921504f34e761507fa
