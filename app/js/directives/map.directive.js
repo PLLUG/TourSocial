@@ -22,7 +22,9 @@ angular.module('app')
         initMap = function () {
           var map, osmUrl,
               osmAttrib, osm;
-
+			  
+			L.Icon.Default.imagePath = './build/images';
+			
           map = new L.map(element.attr('id'));
           osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
           osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a>';
