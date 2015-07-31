@@ -32,7 +32,7 @@ gulp.task('less', function () {
 });
 
 gulp.task('imageMin', function() {
-  return gulp.src('./app/img/**/*.*')
+  return gulp.src(['./app/img/**/*.*','./bower_components/leaflet/dist/images/*.*'])
   .pipe(imagemin({
     optimizationLevel: 7
   }))
@@ -84,4 +84,8 @@ gulp.task('templatesDirect', function() {
   .pipe(gulp.dest('./build/templates'));
 });
 
+<<<<<<< HEAD
 gulp.task('default', ['cssConcat', 'jsUglify', 'webserver', 'imageMin', 'image', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
+=======
+gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
+>>>>>>> f28bc6ef50258d09dc07cb921504f34e761507fa

@@ -10,7 +10,7 @@ angular.module('app')
         contentKey: '@contentKey'
       },
       link: function(scope, element, attrs) {
-
+        L.Icon.Default.imagePath = 'images';
         $(element).width(attrs.width).height(attrs.height);
 
         var setMarker = function (map, lat, lng, content) {
@@ -48,7 +48,6 @@ angular.module('app')
             for (var i = 0; i < markers.length; i++) {
               var marker = markers[i];
               var content = marker[scope.contentKey];
-
               setMarker(map, marker.lat, marker.lng, content);
             }
           }
