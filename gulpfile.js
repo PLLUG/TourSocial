@@ -39,22 +39,14 @@ gulp.task('imageMin', function() {
   .pipe(gulp.dest('./build/images'));
 });
 
-<<<<<<< HEAD
-=======
+
 gulp.task('image', function () {
   return gulp.src('./bower_components/leaflet/dist/images/*.*')
     //.pipe(image())
     .pipe(gulp.dest('./build/images'));
 });
 
-/*gulp.task('image', function () {
-  return gulp.src('./bower_components/leaflet/dist/images/*.*')
-    .pipe(image())
-    .pipe(gulp.dest('./build/images'));
-});*/
 
-
->>>>>>> ccd7d0f0e6b0f81185cdd7ccb12d9c6f49b621de
 gulp.task('watch', ['cssConcat'], function () {
   gulp.watch('./app/less/**/*.less', ['less', 'cssConcat']);
   gulp.watch('./app/js/**/*.js', ['jsUglify']);
@@ -87,20 +79,4 @@ gulp.task('templatesDirect', function() {
   .pipe(gulp.dest('./build/templates'));
 });
 
-<<<<<<< HEAD
 gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-gulp.task('default', ['cssConcat', 'jsUglify', 'webserver', 'imageMin', 'image', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
-=======
-gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
->>>>>>> f28bc6ef50258d09dc07cb921504f34e761507fa
-=======
-gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
->>>>>>> f28bc6ef50258d09dc07cb921504f34e761507fa
-=======
-gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
->>>>>>> f28bc6ef50258d09dc07cb921504f34e761507fa
->>>>>>> ccd7d0f0e6b0f81185cdd7ccb12d9c6f49b621de
