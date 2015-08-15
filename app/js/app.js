@@ -1,5 +1,7 @@
 angular.module("app", ['ui.router'])
-.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+.config([
+  '$stateProvider', '$urlRouterProvider',
+  function ($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('base', {
     abstract: true,
@@ -27,6 +29,15 @@ angular.module("app", ['ui.router'])
       }
     }
   })
+  .state('base.profile', {
+    url: '/profile',
+    views: {
+      'content@base': {
+        templateUrl: 'templates/profile.html',
+        controller: 'ProfileController'
+      }
+    }
+  })
   .state('base.about', {
     url: '/about',
     views: {
@@ -36,20 +47,21 @@ angular.module("app", ['ui.router'])
       }
     }
   });
+}])
+run(['$window', function ($window) {
+  $window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1602241300037341',
+        xfbml      : true,
+        version    : 'v2.4'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
 }]);
-
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1602241300037341',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
