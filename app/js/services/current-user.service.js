@@ -9,7 +9,7 @@ angular.module('app')
       .success(function (user) {
         facebookDefer.resolve(user);
       })
-      error(function (error) {
+      .error(function (error) {
         facebookDefer.reject(error);
       });
 
