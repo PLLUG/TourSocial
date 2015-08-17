@@ -1,26 +1,24 @@
 angular.module('app')
 .factory('CurrentUserService', [
-  '$q', '$http', '$localStorage',
-  function($q, $http, $localStorage) {
+  '$q', '$http', 'FACEBOOK',
+  function($q, $http, FACEBOOK) {
   var login = function () {
     var facebookDefer = $q.defer();
 
-    $http.get('some_facebook_url', {})
+    $http.get('http://graph.facebook.com/oauth/access_token', {
+      params: {
+        client_id: FACEBOOK.appId,
+        client_secret: FACEBOOK.appSecret,
+        grant_type: [],
+        redirect_uri: 'https://www.facebook.com/connect/login_success.html'
+      }
+      })
       .success(function (user) {
-        facebookDefer.resolve(user);
+        console.log(user);
+        //facebookDefer.resolve(user);
       })
       .error(function (error) {
         facebookDefer.reject(error);
-      });
-
-      facebookDefer.promise.then(function (token) {
-        $localStorage.token = token;
-        $http.post('/currentUser', {
-          token: token
-        })
-        .success(function (user) {
-          $localStorage.user = user;
-        });
       });
 
       return facebookDefer.promise;

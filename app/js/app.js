@@ -48,20 +48,10 @@ angular.module("app", ['ui.router'])
     }
   });
 }])
-run(['$window', function ($window) {
-  $window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '1602241300037341',
-        xfbml      : true,
-        version    : 'v2.4'
-      });
-    };
+.constant('FACEBOOK', {
+  appId: '1475404016115759',
+  appSecret: '8391e855ba631a27534c3e118c80b04f'
+})
+.run(['$window', function ($window) {
 
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
 }]);

@@ -16,7 +16,7 @@
     "angular": "~1.4.1",
     "angular-resource": "~1.4.1",
     "angular-ui-router": "~0.2.15",
-    "bootstrap": "~3.3.5",
-    "leaflet": "~0.7.3"
+    "leaflet": "~0.7.3",
+    "skeleton": "~2.0.4"
   }
 }
