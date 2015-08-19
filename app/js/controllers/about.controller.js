@@ -1,5 +1,5 @@
 angular.module('app')
-  .controller('AboutController', ['$scope', function ($scope) {
+  .controller('aboutController', ['$scope', function ($scope) {
     $scope.markers = [{
       lat: 51.3,
       lng: 0.7,

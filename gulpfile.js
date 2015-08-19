@@ -42,14 +42,10 @@ gulp.task('imageMin', function() {
 
 gulp.task('image', function () {
   return gulp.src('./bower_components/leaflet/dist/images/*.*')
-    //.pipe(image())
+    .pipe(image())
     .pipe(gulp.dest('./build/images'));
 });
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/development
 gulp.task('watch', ['cssConcat'], function () {
   gulp.watch('./app/less/**/*.less', ['less', 'cssConcat']);
   gulp.watch('./app/js/**/*.js', ['jsUglify']);

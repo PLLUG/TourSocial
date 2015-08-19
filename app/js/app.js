@@ -8,33 +8,24 @@ angular.module("app", ['ui.router'])
     url: '',
     views: {
       '@': {
-        templateUrl: 'templates/common/layout.html'
+        templateUrl: 'templates/shared/layout.html'
       },
       'header@base': {
-        templateUrl: 'templates/common/header.html'
+        templateUrl: 'templates/shared/header.html'
       },
-      'leftbar@base': {
-        templateUrl: 'templates/common/leftbar.html'
+      'sidebar@base': {
+        templateUrl: 'templates/shared/sidebar.html'
       },
       'footer@base': {
-        templateUrl: 'templates/common/footer.html'
+        templateUrl: 'templates/shared/footer.html'
       }
     }
   })
   .state('base.index', {
-    url: '',
+    url: '/',
     views: {
       'content@base': {
         templateUrl: 'templates/page.html'
-      }
-    }
-  })
-  .state('base.profile', {
-    url: '/profile',
-    views: {
-      'content@base': {
-        templateUrl: 'templates/profile.html',
-        controller: 'ProfileController'
       }
     }
   })
@@ -43,15 +34,44 @@ angular.module("app", ['ui.router'])
     views: {
       'content@base': {
         templateUrl: 'templates/about.html',
-        controller: 'AboutController'
+        controller: 'aboutController'
+      }
+    }
+  })
+  .state('account', {
+    abstract: true,
+    url: '/account',
+    views: {
+      '@': {
+        templateUrl: 'templates/shared/anonymous.html'
+      },
+    }
+  })
+  .state('account.signin', {
+    url: '/signin',
+    views: {
+      'content@account': {
+        templateUrl: 'templates/signin.html',
+        controller: 'signinController'
+      }
+    }
+  })
+  .state('account.signup', {
+    url: '/signup',
+    views: {
+      'content@account': {
+        templateUrl: 'templates/signup.html',
+        controller: 'signupController'
       }
     }
   });
+
+  $urlRouterProvider.otherwise('/');
 }])
 .constant('FACEBOOK', {
   appId: '1475404016115759',
   appSecret: '8391e855ba631a27534c3e118c80b04f'
 })
-.run(['$window', function ($window) {
-
+.run(['$rootScope', '$state', function ($rootScope, $state) {
+  $rootScope.$on('$stateChangeStart', function (e, toState, fromState) {});
 }]);
