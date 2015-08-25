@@ -10,9 +10,6 @@ angular.module("app", ['ui.router'])
       '@': {
         templateUrl: 'templates/shared/layout.html'
       },
-      'header@base': {
-        templateUrl: 'templates/shared/header.html'
-      },
       'sidebar@base': {
         templateUrl: 'templates/shared/sidebar.html'
       },
