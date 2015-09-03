@@ -61,6 +61,24 @@ angular.module("app", ['ui.router'])
         controller: 'signupController'
       }
     }
+  })
+  .state('profile', {
+    abstract: true,
+    url: '/profile',
+    views: {
+      '@': {
+        templateUrl: 'templates/shared/anonymous.html'
+      },
+    }
+  })
+  .state('profile.edit', {
+    url: '/signup',
+    views: {
+      'content@profile': {
+        templateUrl: 'templates/profile/edit.html',
+        controller: 'profileEditController'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/');
