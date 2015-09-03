@@ -1,3 +1,5 @@
+@import "settings";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,7 @@
 
 .header {
   background: #000;
-  height: 50px;
+  height: 60px;
   color: #fff;
 
   h2 {
@@ -24,4 +26,62 @@
 
 .centered {
   text-align: center;
+}
+
+.user-avatar {
+  vertical-align: middle;
+  cursor: pointer;
+
+  img {
+    border-radius: 20px;
+    border-radius: 100%;
+    margin: 10px;
+    display: inline-block;
+
+    float: left;
+  }
+
+  .uname {
+    display: inline-block;
+    margin: 20px 0;
+  }
+
+  span {
+    color: #fff;
+  }
+}
+
+.header {
+    .left {
+      float: left;
+      display: inline-block;
+    }
+
+    .right {
+      float: right;
+      display: inline-block;
+    }
+}
+
+.dropdown {
+  width: 200px;
+
+
+  box-shadow: 0 0 0 1px #ccc;
+  color: #666;
+
+  position: absolute;
+
+  ul {
+    li {
+      padding: 10px;
+      cursor: pointer;
+      display: block;
+      list-style: none;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
 }

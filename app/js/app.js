@@ -79,6 +79,15 @@ angular.module("app", ['ui.router'])
         controller: 'profileEditController'
       }
     }
+  })
+  .state('profile.settings', {
+    url: '/settings',
+    views: {
+      'content@profile': {
+        templateUrl: 'templates/profile/settings.html',
+        controller: 'profileSettingsController'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/');
