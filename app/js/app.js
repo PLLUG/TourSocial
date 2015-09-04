@@ -96,6 +96,14 @@ angular.module("app", ['ui.router'])
   appId: '1475404016115759',
   appSecret: '8391e855ba631a27534c3e118c80b04f'
 })
-.run(['$rootScope', '$state', function ($rootScope, $state) {
-  $rootScope.$on('$stateChangeStart', function (e, toState, fromState) {});
+.run(['$rootScope', '$window', '$state', 'FACEBOOK', function ($rootScope, $window, $state, FACEBOOK) {
+  $window.fbAsyncInit = function() {
+    // FB.init({
+    //   appId: 'appId',
+    //   status: true,
+    //   cookie: true,
+    //   xfbml: true,
+    //   version: 'v2.3'
+    // });
+};
 }]);
