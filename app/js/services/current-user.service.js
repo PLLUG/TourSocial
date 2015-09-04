@@ -14,8 +14,7 @@ angular.module('app')
       }
       })
       .success(function (user) {
-        console.log(user);
-        //facebookDefer.resolve(user);
+        facebookDefer.resolve(user);
       })
       .error(function (error) {
         facebookDefer.reject(error);
