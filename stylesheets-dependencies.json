@@ -6,5 +6,6 @@
     "./bower_components/bootstrap/dist/css/bootstrap.css",
     "./bower_components/plugins/adminlte/dist/css/AdminLTE.css",
     "./bower_components/plugins/adminlte/dist/css/skins/_all-skins.css"
+    
   ]
 }

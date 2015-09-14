@@ -37,6 +37,11 @@ gulp.task('imageMin', function() {
     optimizationLevel: 7
   }))
   .pipe(gulp.dest('./build/dist/img/'));
+  return gulp.src(['./app/img/**/*.*','./bower_components/leaflet/dist/images/*.*'])
+  .pipe(imagemin({
+    optimizationLevel: 7
+  }))
+  .pipe(gulp.dest('./build/images'));
 });
 
 

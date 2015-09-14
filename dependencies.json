@@ -10,7 +10,6 @@
     "./bower_components/plugins/fastclick/lib/fastclick.js",
     "./bower_components/plugins/adminlte/dist/js/app.js",
     "./bower_components/plugins/adminlte/dist/js/demo.js" 
-      
-      
+    "./bower_components/leaflet/dist/leaflet.js"
   ]
 }
