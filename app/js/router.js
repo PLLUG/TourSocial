@@ -11,9 +11,6 @@ angular.module('app')
         'sidebar@base': {
           templateUrl: 'templates/shared/sidebar.html'
         },
-        'footer@base': {
-          templateUrl: 'templates/shared/footer.html'
-        }
       }
     })
     .state('base.index', {

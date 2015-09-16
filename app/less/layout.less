@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, {
+  height: 100%;
+}
+
+.flexbox {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+}
+
+.header-mixin {
+    order: 1;
+    flex: 1;
+
+}
+
+.wrapper  {
+  height: 100%;
+  .flexbox;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+.header, .sidebar, .main, .footer {
+  flex: 1 100%;
+}
+
+.sidebar {
+  height: 100%;
+  order: 1;
+  flex: 1;
+  background: #222D32;
+
+  .sidebar-wrapper {
+    .flexbox;
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    .header {
+      .header-mixin;
+      height: 150px;
+      order: 1;
+
+      flex: 1 100%;
+
+      .avatar {
+        .img {
+          margin: 10px;
+          height: 80px;
+          border-radius: 40px;
+        }
+
+        .name {
+          font-weight: bold;
+          font-weight: 19pt;
+          color: #fff;
+        }
+      }
+
+      h3 {
+        background: #000;
+        color: #fff;
+      }
+    }
+
+    .nav {
+      flex: 11;
+      order: 2;
+
+    }
+  }
+}
+
+.main {
+  .flexbox;
+  order: 2;
+  flex: 5;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+
+  .header {
+    .header-mixin;
+    background: #3C8DBC;
+    flex: 1 100%;
+
+    .toggle-menu {
+      margin-top: 3px;
+      margin-left: 10px;
+      color: #fff;
+      font-size: 22pt;
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    background: #ddd;
+    flex: 1;
+    order: 2;
+  }
+}
+
+.footer {
+  order: 3;
+}

@@ -1,12 +1,15 @@
-<div ui-view="header"></div>
-<div class="container">
-  <div class="row">
-    <div class="ten columns">
+<div class="wrapper">
+  <div class="sidebar" ng-show="showMenu">
+    <div ui-view="sidebar"></div>
+  </div>
+  <div class="main">
+    <header class="header">
+      <div class="toggle-menu"  ng-click="toggleMenu()">
+        <i class="icon-menu"></i>
+      </div>
+    </header>
+    <div class="content">
       <div ui-view="content"></div>
     </div>
-    <div class="two columns">
-      <div ui-view="sidebar"></div>
-    </div>
   </div>
-  <div ui-view="footer"></div>
 </div>
