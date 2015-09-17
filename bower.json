@@ -17,6 +17,8 @@
     "angular-resource": "~1.4.1",
     "angular-ui-router": "~0.2.15",
     "leaflet": "~0.7.3",
+    "ng-file-upload": "~7.0.17",
+    "ng-file-upload-shim": "~7.0.17",
     "skeleton": "~2.0.4"
   }
 }

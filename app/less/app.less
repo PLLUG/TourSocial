@@ -5,15 +5,6 @@
   padding: 0;
 }
 
-h2 {
-  margin: 0;
-  padding: 0;
-}
-
-#map {
-  width: 60%;
-}
-
 .header {
   border-bottom: 1px solid #eee;
   height: 60px;
@@ -21,6 +12,7 @@ h2 {
 
   h2 {
     margin-left: 10px;
+    color: #666;
   }
 }
 
@@ -37,6 +29,10 @@ h2 {
     .left {
       float: left;
       display: inline-block;
+
+      h3 {
+        color: lightblue;
+      }
     }
 
     .right {
@@ -87,6 +83,24 @@ h2 {
       &:hover {
         background: #eee;
       }
+    }
+  }
+}
+
+.input {
+  border: 2px solid #ccc!important;
+  width: 400px;
+  height: 45px!important;
+  font-size: 17px;
+
+  &:focus {
+    border: 2px solid lightblue!important;
+  }
+
+  &.ng-valid {
+
+    &.ng-dirty {
+      border: 2px solid lightgreen!important;
     }
   }
 }

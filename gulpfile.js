@@ -79,4 +79,7 @@ gulp.task('templatesDirect', function() {
 });
 
 
-gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'watch']);
+gulp.task('default', [
+  'imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect',
+  'buildLib', 'less', 'watch'
+]);

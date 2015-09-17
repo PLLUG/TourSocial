@@ -5,23 +5,24 @@
   <div class="three columns">
 
   </div>
-  <div class="six columns">
-    <div>
-      <div>
-        <div class="facebook centered">
-          <facebook-button></facebook-button>
-        </div>
-        <div class="centered">
-          <div class="or-email" class="u-full-width" ng-click="showEmail=!showEmail">Or email</div>
-        </div>
-        <div ng-show="showEmail">
+  <div>
+    <div class="centered">
+        <div>
           <div>
-            <div><input class="u-full-width" type="text" placeholder="Email"></div>
-            <div><input class="u-full-width" type="password" placeholder="password"></div>
-            <div><input class="u-full-width" type="text" placeholder="First Name"></div>
-            <div><input class="u-full-width" type="text" placeholder="Last Name"></div>
             <div>
-              <button type="button" class="button-primary" name="button">Sign up</button>
+              <input class="input" type="email" ng-model="account.email" placeholder="Email" required />
+            </div>
+            <div>
+              <input class="input" type="password" ng-minlength="6" ng-model="account.password" placeholder="password" required />
+            </div>
+            <div>
+              <input class="input" type="text" ng-model="account.firstName" placeholder="First Name" required />
+            </div>
+            <div>
+              <input class="input" type="text" ng-model="account.lastName" placeholder="Last Name" required />
+            </div>
+            <div>
+              <button type="button" class="button-primary" ng-click="signup()" name="button">Sign up</button>
             </div>
           </div>
         </div>
@@ -30,6 +31,4 @@
         </div>
       </div>
     </div>
-  </div>
-
 </div>

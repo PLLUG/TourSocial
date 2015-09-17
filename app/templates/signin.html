@@ -1,32 +1,19 @@
 <div class="row">
   <div class="eleven columns">
-      <h2>Sign in</h2>
+    <h2>Sign in</h2>
   </div>
-  <div class="three columns">
-
-  </div>
-  <div class="six columns">
+  <div class="centered">
     <div>
-      <div>
-        <div class="facebook centered">
-          <facebook-button></facebook-button>
-        </div>
-        <div class="centered">
-          <div class="or-email" class="u-full-width" ng-click="showEmail=!showEmail">Or email</div>
-        </div>
-        <div ng-show="showEmail">
-          <div>
-            <div><input class="u-full-width" type="text" placeholder="Email"></div>
-            <div><input class="u-full-width" type="password" placeholder="password"></div>
-            <div>
-              <button type="button" class="button-primary" name="button">Sign in</button>
-            </div>
-          </div>
-        </div>
-        <div class="centered">
-            <a ui-sref="account.signup">Sign up</a>
-        </div>
-      </div>
+      <input class="input" type="email" ng-model="user.email" placeholder="Email" required>
     </div>
+    <div>
+      <input class="input" type="password" ng-model="user.password" placeholder="Password" required>
+    </div>
+    <div>
+      <button type="button" class="button-primary" ng-click="signin()" name="button">Sign in</button>
+    </div>
+  </div>
+  <div class="centered">
+    <a ui-sref="account.signup">Sign up</a>
   </div>
 </div>
