@@ -1,0 +1,29 @@
+.photo {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0px;
+}
+
+.photo_img img{
+      border-radius: 50%;
+      max-width: 20%;
+      max-height: 20%;
+      min-width: 20pt;
+      min-height: 20pt;
+      margin: 10px;
+      -webkit-transition: all 1s ease; /* Safari and Chrome */
+      -moz-transition: all 1s ease; /* Firefox */
+      -o-transition: all 1s ease; /* IE 9 */
+      -ms-transition: all 1s ease; /* Opera */
+      transition: all 1s ease;
+      float: left;
+}
+
+.photo_img :hover img {
+  -webkit-transform:scale(1.25); /* Safari and Chrome */
+  -moz-transform:scale(1.25); /* Firefox */
+  -ms-transform:scale(1.25); /* IE 9 */
+  -o-transform:scale(1.25); /* Opera */
+   transform:scale(1.25);
+}
