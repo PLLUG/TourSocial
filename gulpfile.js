@@ -78,8 +78,10 @@ gulp.task('templatesDirect', function() {
   .pipe(gulp.dest('./build/templates'));
 });
 
+gulp.task('fonts', function () {
+  return gulp.src('./app/less/fonts/*')
+    .pipe(gulp.dest('./build/css/fonts'));
+});
 
-gulp.task('default', [
-  'imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect',
-  'buildLib', 'less', 'watch'
-]);
+
+gulp.task('default', ['imageMin','cssConcat', 'jsUglify', 'webserver', 'templates', 'templatesDirect', 'buildLib', 'less', 'fonts', 'watch']);
