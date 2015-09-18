@@ -1,9 +1,9 @@
 angular.module("app", [
   'ngResource',
+  'ngStorage',
   'ui.router'
 ])
 .run([
-  '$rootScope', '$window', '$state', 'FACEBOOK',
-  function ($rootScope, $window, $state, FACEBOOK) {
-
+  '$rootScope', '$window', '$state',
+  function ($rootScope, $window, $state) {
   }]);

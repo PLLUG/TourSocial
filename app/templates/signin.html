@@ -4,14 +4,13 @@
 
     <form name="login-form">
       <div class="input-group">
-        <input type="text" name="name" value="" placeholder="Email"/>
+        <input type="text" name="name" ng-model="user.email" value="" placeholder="Email"/>
       </div>
       <div class="input-group">
-        <input type="text" name="name" value="" placeholder="Password"/>
+        <input type="password" name="name" ng-model="user.password" value="" placeholder="Password"/>
       </div>
-
       <div class="input-group">
-        <button type="button" name="button">Sign in</button>
+        <button type="button" name="button" ng-click="signin()">Sign in</button>
       </div>
     </form>
   </div>
