@@ -1,15 +1,16 @@
 <div class="wrapper">
-  <div class="sidebar" ng-show="showMenu">
-    <div ui-view="sidebar"></div>
+  <header class="header">
+    <h4>
+      <strong>Tour</strong>Social
+    </h4>
+    <div class="right">
+
+    </div>
+  </header>
+  <div class="sidebar">
+     <div ui-view="sidebar"></div>
   </div>
   <div class="main">
-    <header class="header">
-      <div class="toggle-menu"  ng-click="toggleMenu()">
-        <i class="icon-menu"></i>
-      </div>
-    </header>
-    <div class="content">
-      <div ui-view="content"></div>
-    </div>
+    <div ui-view="content"></div>
   </div>
 </div>
