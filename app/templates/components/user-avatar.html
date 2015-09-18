@@ -1,15 +1,24 @@
-<div class="user-avatar">
-  <div class="name">
-    <span>
-      <img ng-src="http://gravatar.com/avatar/658f2039885a85cc03cc31e20919bed6?s=512" width="40" height="40" class="avatar-image" alt="" />
-    </span>
-    <span class="uname">First Last</span>
+<div class="right">
+  <div class="user-data" ng-click="toggleDropdown()">
+    <div class="avatar">
+      <img src="https://almsaeedstudio.com/themes/AdminLTE/dist/img/user3-128x128.jpg" alt="" class="img" />
+    </div>
+    <div class="name">
+      First Last
+    </div>
   </div>
   <div class="dropdown" ng-show="isOpen">
     <ul>
-      <li></li>
-      <li ui-sref="profile.settings">Settings</li>
-      <li>Logout</li>
+      <li>
+        <a href="#">
+          <i class="icon-cog"></i>Settings
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-forward"></i>Log out
+        </a>
+      </li>
     </ul>
   </div>
 </div>

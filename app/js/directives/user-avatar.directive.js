@@ -2,6 +2,7 @@ angular.module('app')
   .directive('userAvatar', ['$timeout', function($timeout) {
     return {
       restrict: 'E',
+      replace: true,
       templateUrl: 'templates/components/user-avatar.html',
       link: function (scope, element) {
 

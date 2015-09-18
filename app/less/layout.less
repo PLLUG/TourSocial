@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
+  font-weight: normal;
 }
 
 html, body {
@@ -16,17 +18,72 @@ html, body {
   background: #3C8DBC;
   color: #fff;
 
+  .right {
+    float: right;
+    margin-right: 10pt;
+    width: 120pt;
+    cursor: pointer;
+
+    .avatar {
+      img {
+        height: 40pt;
+        border-radius: 20pt;
+        display: inline-block;
+        float: left;
+        margin: 5pt 0;
+      }
+    }
+
+    .name {
+      font-weight: bold;
+      color: #666;
+      display: inline-block;
+      padding-top: 15pt;
+      color: #fff;
+      margin-left: 10pt;
+    }
+
+    .dropdown {
+      background: #1A2222;
+      padding-top: 10pt;
+      padding-bottom: 10pt;
+      margin-top: 17pt;
+      position: absolute;
+      width: 120pt;
+      z-index: 200pt;
+
+      li {
+        list-style: none;
+        color: #fff;
+
+        a {
+          color: #666;
+          text-decoration: none;
+          display: block;
+          padding: 10pt;
+
+          i {
+            margin-right: 5pt;
+          }
+
+          &:hover {
+            background: #333;
+          }
+        }
+      }
+    }
+  }
+
   h4 {
     line-height: 50pt;
     margin-left: 10pt;
+    width: 200pt;
+    font-size: 20pt;
+    display: inline-block;
 
     strong  {
       font-weight: bold;
     }
-  }
-
-  .header-right {
-
   }
 }
 
@@ -36,6 +93,73 @@ html, body {
   float: left;
   background: #1A2226;
   color: #fff;
+
+  .user-avatar {
+    height: 130pt;
+    background: #333;
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 20pt;
+
+    .img {
+      height: 70pt;
+      border-radius: 35pt;
+      margin: 10pt;
+      text-align: center;
+      margin: 15pt 0;
+    }
+
+    .name {
+      margin-left: 10pt;
+      font-weight: bold;
+      text-align: center;
+      padding-bottom: 20pt;
+      font-size: 18pt;
+    }
+  }
+
+  .user-info {
+    height: 70pt;
+    padding-bottom: 10pt;
+
+    .follow {
+      width: 70pt;
+      border-radius: 35pt;
+      background: #333;
+      text-align: center;
+      margin-left: 10pt;
+      display: inline-block;
+      height: 70pt;
+      vertical-align: middle;
+      color: #3C8DBC;
+
+      .number {
+        font-size: 22pt;
+      }
+    }
+  }
+
+  .nav {
+    li {
+      list-style: none;
+      display: block;
+
+      a {
+        color: #fff;
+        cursor: pointer;
+        display:block;
+        padding: 10pt;
+
+        i {
+          margin-right: 10pt;
+        }
+
+        &:hover {
+          background: #333;
+        }
+      }
+    }
+  }
 }
 
 
