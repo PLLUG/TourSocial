@@ -3,109 +3,45 @@
   padding: 0;
 }
 
-html, body, {
+html, body {
   height: 100%;
 }
 
-.flexbox {
-  display: flex;
-  display: -webkit-flex;
-  display: -moz-flex;
+.wrapper {
+  min-height: 100%;
 }
 
-.header-mixin {
-    order: 1;
-    flex: 1;
+.header {
+  height: 50pt;
+  background: #3C8DBC;
+  color: #fff;
 
-}
+  h4 {
+    line-height: 50pt;
+    margin-left: 10pt;
 
-.wrapper  {
-  height: 100%;
-  .flexbox;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  flex-direction:  row;
-}
+    strong  {
+      font-weight: bold;
+    }
+  }
 
-.header, .sidebar, .main, .footer {
-  flex: 1 100%;
+  .header-right {
+
+  }
 }
 
 .sidebar {
-  height: 100%;
-  order: 1;
-  flex: 1;
-  background: #222D32;
-
-  .sidebar-wrapper {
-    .flexbox;
-
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    .header {
-      .header-mixin;
-      height: 150px;
-      order: 1;
-
-      flex: 1 100%;
-
-      .avatar {
-        .img {
-          margin: 10px;
-          height: 80px;
-          border-radius: 40px;
-        }
-
-        .name {
-          font-weight: bold;
-          font-weight: 19pt;
-          color: #fff;
-        }
-      }
-
-      h3 {
-        background: #000;
-        color: #fff;
-      }
-    }
-
-    .nav {
-      flex: 11;
-      order: 2;
-
-    }
-  }
+  width: 20%;
+  height: 900pt;
+  float: left;
+  background: #1A2226;
+  color: #fff;
 }
+
 
 .main {
-  .flexbox;
-  order: 2;
-  flex: 5;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-
-  .header {
-    .header-mixin;
-    background: #3C8DBC;
-    flex: 1 100%;
-
-    .toggle-menu {
-      margin-top: 3px;
-      margin-left: 10px;
-      color: #fff;
-      font-size: 22pt;
-      cursor: pointer;
-    }
-  }
-
-  .content {
-    background: #ddd;
-    flex: 5;
-    order: 2;
-  }
-}
-
-.footer {
-  order: 8;
-  background: #333;
+  width: 80%;
+  float: right;
+  background: lightyellow;
+  height: 100%;
 }
