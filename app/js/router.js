@@ -74,8 +74,12 @@ angular.module('app')
       url: '/profile',
       views: {
         '@': {
-          templateUrl: 'templates/shared/anonymous.html'
+          templateUrl: 'templates/shared/layout.html'
         },
+        'sidebar@profile': {
+          templateUrl: 'templates/shared/sidebar.html',
+          controller: 'sidebarController'
+        }
       }
     })
     .state('profile.edit', {
