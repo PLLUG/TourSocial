@@ -1,12 +1,15 @@
 angular.module('app')
   .controller('signupController', [
-    '$scope', '$state', 'Account',
-    function ($scope, $state, Account) {
-      $scope.account = new Account();
+      '$scope', '$state', '$localStorage', '$rootScope', 'Account',
+    function ($scope, $state, $localStorage, $rootScope, Account) {
+      $scope.account = {};
 
       $scope.signup = function () {
         console.log($scope.account);
-        $scope.account.$register(function (user) {
+        Account.register($scope.user, function (result) {
+          $rootScope.token = result.token;
+          $localStorage.token = result.token;
+          $localStorage.user = result.user;
           $state.go('base.index');
         });
       };
