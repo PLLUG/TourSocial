@@ -1,34 +1,27 @@
-<div class="row">
-  <div class="eleven columns">
+<div class="wrapper">
+  <div class="login-wrapper">
+    <div class="signin">
       <h2>Sign up</h2>
-  </div>
-  <div class="three columns">
 
-  </div>
-  <div>
-    <div class="centered">
-        <div>
-          <div>
-            <div>
-              <input class="input" type="email" ng-model="account.email" placeholder="Email" required />
-            </div>
-            <div>
-              <input class="input" type="password" ng-minlength="6" ng-model="account.password" placeholder="password" required />
-            </div>
-            <div>
-              <input class="input" type="text" ng-model="account.firstName" placeholder="First Name" required />
-            </div>
-            <div>
-              <input class="input" type="text" ng-model="account.lastName" placeholder="Last Name" required />
-            </div>
-            <div>
-              <button type="button" class="button-primary" ng-click="signup()" name="button">Sign up</button>
-            </div>
-          </div>
+      <form name="login-form">
+        <div class="input-group">
+          <input type="text" name="name" value="" placeholder="Email"/>
         </div>
-        <div class="centered">
-            <a ui-sref="account.signin">Sign in</a>
+        <div class="input-group">
+          <input type="text" name="name" value="" placeholder="Password"/>
         </div>
-      </div>
+        <div class="input-group">
+          <input type="text" name="name" value="" placeholder="First"/>
+        </div>
+        <div class="input-group">
+          <input type="text" name="name" value="" placeholder="Last"/>
+        </div>
+
+        <div class="input-group">
+          <button type="button" name="button">Sign up</button>
+        </div>
+      </form>
     </div>
+  </div>
+
 </div>
