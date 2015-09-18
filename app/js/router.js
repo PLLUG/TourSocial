@@ -23,27 +23,24 @@ angular.module('app')
         }
       }
     })
-
-    .state('base.about', {
-      url: '/about',
-      views: {
-        'content@base': {
-          templateUrl: 'templates/about.html',
-          controller: 'aboutController'
-        }
-      }
-    })
-
-    .state('followers', {
+    .state('base.followers', {
       url: '/followers',
       views: {
         'content@base': {
-          templateUrl: 'templates/shared/followers.html',
+          templateUrl: 'templates/followers.html',
           controller: 'followersController'
         }
       }
     })
-
+    .state('base.trips', {
+      url: '/trips',
+      views: {
+        'content@base': {
+          templateUrl: 'templates/trips.html',
+          controller: 'tripsController'
+        }
+      }
+    })
     .state('account', {
       abstract: true,
       url: '/account',

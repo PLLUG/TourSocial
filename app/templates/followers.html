@@ -1,0 +1,11 @@
+<div class="box-box-danger">
+  <div class="box-body-no-padding">
+    <ul class="users-list-clearfix">
+      <li ng-repeat="photo in photos">
+          <img ng-src="{{ photo.img }}" alt="User Image">
+          <a class="user-list-name" href="#">{{ photo.name }}</a>
+          <span class="user-list-date">{{ photo.date }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
