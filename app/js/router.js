@@ -12,10 +12,7 @@ angular.module('app')
         },
         'sidebar@base': {
           templateUrl: 'templates/shared/sidebar.html'
-        },
-        /*'followers@base': {
-          templateUrl: 'templates/shared/followers.html'
-        },*/
+        }
       }
     })
     .state('base.index', {
