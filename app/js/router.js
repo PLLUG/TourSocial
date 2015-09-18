@@ -11,7 +11,8 @@ angular.module('app')
           templateUrl: 'templates/shared/layout.html'
         },
         'sidebar@base': {
-          templateUrl: 'templates/shared/sidebar.html'
+          templateUrl: 'templates/shared/sidebar.html',
+          controller: 'sidebarController'
         }
       }
     })

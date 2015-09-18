@@ -1,10 +1,14 @@
 angular.module('app')
-  .directive('userAvatar', ['$timeout', function($timeout) {
+  .directive('userAvatar', [
+    '$timeout', 'currentUserService',
+    function($timeout, currentUserService) {
     return {
       restrict: 'E',
       replace: true,
       templateUrl: 'templates/components/user-avatar.html',
       link: function (scope, element) {
+
+        scope.user = currentUserService.user();
 
         var toggleDropdown = function () {
           scope.isOpen = !scope.isOpen;
@@ -17,6 +21,10 @@ angular.module('app')
         element.on('click', function () {
           toggleDropdown();
         });
+
+        scope.signout = function () {
+          currentUserService.signout();
+        }
       }
     };
   }]);
