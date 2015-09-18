@@ -6,6 +6,7 @@ angular.module('app')
     $scope.user = {};
 
     $scope.signin = function () {
+      console.log($scope.user);
       Account.signin($scope.user, function (result) {
         $rootScope.token = result.token;
         $localStorage.token = result.token;
