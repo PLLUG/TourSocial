@@ -13,6 +13,9 @@ angular.module('app')
         'sidebar@base': {
           templateUrl: 'templates/shared/sidebar.html'
         },
+        /*'followers@base': {
+          templateUrl: 'templates/shared/followers.html'
+        },*/
       }
     })
     .state('base.index', {
@@ -23,6 +26,7 @@ angular.module('app')
         }
       }
     })
+
     .state('base.about', {
       url: '/about',
       views: {
@@ -32,6 +36,17 @@ angular.module('app')
         }
       }
     })
+
+    .state('followers', {
+      url: '/followers',
+      views: {
+        'content@base': {
+          templateUrl: 'templates/shared/followers.html',
+          controller: 'followersController'
+        }
+      }
+    })
+
     .state('account', {
       abstract: true,
       url: '/account',
