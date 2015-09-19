@@ -1,32 +1,35 @@
-<div class="settings">
-  <h2 class="page-header">Profile Details</h2>
-
-
-  <div class="profile">
-    <div class="profile-item left">
-      <div class="avatar">
-        <img
-          ng-src="http://gravatar.com/avatar/658f2039885a85cc03cc31e20919bed6?s=512"
-          width="120" height="120" class="avatar-image" alt="" />
-      </div>
-      <div class="info">
-      </div>
+<div class="usersettingstitle"><h2>User Settings</h2></div>
+<div class="subheader">
+  <span class="settings" ng-class="{'active': !password}" ng-click="password=false">Settings</span>
+  <span class="password" ng-class="{'active': password}" ng-click="password=true">Password</span>
+</div>
+<div class="profile-settings" ng-show="!password">
+  <img width="200" height="200" src="https://scontent-waw1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11951754_474236086090221_1040259607680958282_n.jpg?oh=1c5d44536d9b073975af5a21374d3f04&oe=569C6AE1">
+  <form >
+    <div class="input-group">
+      <input name="login" type="text"   ng-model="user.email" disabled />
     </div>
-    <div class="profile-item">
-      <div class="profile-info">
-        <div class="item">
-          <strong>Email:</strong> email@example.com
-        </div>
-        <div class="item">
-          <strong>Username:</strong> username
-        </div>
-        <div class="item">
-          <strong>First Name:</strong> First Name
-        </div>
-        <div class="item">
-          <strong>Last Name:</strong> Last Name
-        </div>
-      </div>
+    <div class="input-group">
+      <input name="login" type="text"   ng-model="user.firstName" />
     </div>
-  </div>
+    <div class="input-group">
+      <input type="text" ng-model="user.lastName" value="" />
+    </div>
+    <div>
+      <button type="button" name="enter" value="Save" ng-click="update()">Save</button>
+    </div>
+  </form>
+</div>
+<div class="profile-settings" ng-show="password">
+  <form  >
+    <div class="input-group">
+      <input name="login" type="password"   ng-model="pass.newPassword"  placeholder="New password"/>
+    </div>
+    <div class="input-group">
+      <input type="password" ng-model="pass.newPasswordConfirm" value="" placeholder="New password confirm"/>
+    </div>
+    <div>
+      <button type="button" class="password-button" ng-click="savePassword()">Update password</button>
+    </div>
+  </form>
 </div>
