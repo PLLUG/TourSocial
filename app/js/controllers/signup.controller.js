@@ -5,12 +5,8 @@ angular.module('app')
       $scope.account = {};
 
       $scope.signup = function () {
-        console.log($scope.account);
         Account.register($scope.user, function (result) {
-          $rootScope.token = result.token;
-          $localStorage.token = result.token;
-          $localStorage.user = result.user;
-          $state.go('base.index');
+          $state.go('account.signin');
         });
       };
     }]);

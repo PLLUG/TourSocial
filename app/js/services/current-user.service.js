@@ -4,7 +4,6 @@ angular.module('app')
   function($state, $rootScope, $localStorage, User) {
     return {
       user: function () {
-        console.log($localStorage.user);
         return $localStorage.user;
       },
 
